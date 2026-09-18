@@ -1,3 +1,6 @@
+/* ==========================================
+   RESET Y ESTILOS BASE
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +15,17 @@ html {
 body {
     background-color: #f4f7f6;
     color: #333;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
 header {
     background-color: #006699;
     color: white;
@@ -29,45 +40,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
-.requisitos {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin: 30px auto;
-}
 
-.requisitos ul {
-    list-style: none;
-    max-width: 650px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.requisitos li {
-    background-color: #e0f2fe;
-    color: #333;
-    padding: 15px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-left: 4px solid #006699;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.requisitos li:hover {
-    transform: translateX(5px);
-    background-color: #d0e8fc;
-}
-
-.requisitos li i {
-    color: #006699;
-    font-size: 20px;
-}
 .logo h1 {
     font-size: 22px;
     font-weight: bold;
@@ -80,7 +53,7 @@ header {
 
 nav {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 nav a {
@@ -93,6 +66,7 @@ nav a {
     display: flex;
     align-items: center;
     gap: 6px;
+    font-size: 15px;
 }
 
 nav a:hover, 
@@ -101,27 +75,19 @@ nav a.active {
     color: #ffcc00;
 }
 
-nav a .fa-house {
-    color: #ffcc00;
-}
-
-nav a .fa-school {
-    color: #ff3333;
-}
-
-nav a .fa-images {
-    color: #ffcc00;
-}
-
-nav a .fa-phone {
-    color: #ff3333;
-}
+nav a .fa-house { color: #ffcc00; }
+nav a .fa-school { color: #ff3333; }
+nav a .fa-images { color: #ffcc00; }
+nav a .fa-phone { color: #ff3333; }
 
 nav a:hover i,
 nav a.active i {
     color: #ffcc00;
 }
 
+/* ==========================================
+   SECCIONES Y CONTENIDOS
+   ========================================== */
 .inicio {
     text-align: center;
     padding: 50px 20px;
@@ -178,7 +144,10 @@ nav a.active i {
     font-size: 16px;
 }
 
-.tarjetas {
+/* ==========================================
+   TARJETAS Y CUADRÍCULAS
+   ========================================== */
+.tarjetas, .materias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
@@ -201,11 +170,9 @@ nav a.active i {
     gap: 8px;
 }
 
-.tarjeta h3 i {
-    color: #ff3333;
-}
+.tarjeta h3 i { color: #ff3333; }
 
-.tarjeta p {
+.tarjeta p, .lista-tarjeta {
     color: #555;
     line-height: 1.5;
 }
@@ -213,15 +180,8 @@ nav a.active i {
 .lista-tarjeta {
     list-style: none;
     margin-top: 10px;
-    color: #555;
-    line-height: 1.6;
     font-size: 14px;
-}
-
-.materias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    line-height: 1.6;
 }
 
 .materias div {
@@ -264,6 +224,52 @@ nav a.active i {
     line-height: 1.5;
 }
 
+/* ==========================================
+   REQUISITOS DE PREINSCRIPCIÓN
+   ========================================== */
+.requisitos {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 30px auto;
+}
+
+.requisitos ul {
+    list-style: none;
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.requisitos li {
+    background-color: #e0f2fe;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 4px solid #006699;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.requisitos li:hover {
+    transform: translateX(5px);
+    background-color: #d0e8fc;
+}
+
+.requisitos li i {
+    color: #006699;
+    font-size: 20px;
+}
+
+/* ==========================================
+   FORMULARIO Y FOOTER
+   ========================================== */
 .formulario {
     background-color: white;
     max-width: 700px;
@@ -352,4 +358,112 @@ footer h3 {
 footer p {
     color: #ccc;
     margin-bottom: 5px;
+}
+
+/* ==========================================
+   REGISTRO RESPONSIVO (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablets (Máximo 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 12px 3%;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .seccion {
+        padding: 30px 15px;
+    }
+}
+
+/* Celulares / Móviles (Máximo 768px) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 110px; /* Ajuste para evitar solapamiento del header fijo */
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .contenido h1 {
+        font-size: 24px;
+    }
+
+    .contenido p {
+        font-size: 15px;
+    }
+
+    .seccion h2 {
+        font-size: 22px;
+    }
+
+    .tarjetas, .materias {
+        grid-template-columns: 1fr; /* Pasa a una sola columna */
+    }
+
+    .requisitos li {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    .formulario {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    .formulario input, 
+    .formulario textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Pantallas Pequeñas (Máximo 480px) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 130px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 5px 6px;
+        gap: 4px;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .requisitos li i {
+        font-size: 16px;
+    }
 }
