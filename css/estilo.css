@@ -15,6 +15,12 @@ body {
     padding-top: 60px;
 }
 
+/* Regla preventiva global para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
     background-color: #006699;
     color: white;
@@ -329,4 +335,120 @@ footer h3 {
 footer p {
     color: #ccc;
     margin-bottom: 5px;
+}
+
+/* ==========================================
+   REGLAS RESPONSIVAS (MEDIA QUERIES)
+   ========================================== */
+
+/* Tablets y pantallas medianas (hasta 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 12px 3%;
+    }
+
+    nav ul li a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .seccion {
+        padding: 30px 15px;
+    }
+}
+
+/* Teléfonos celulares (hasta 768px) */
+@media (max-width: 768px) {
+    body {
+        /* Aumenta el padding para dar espacio al header rediseñado */
+        padding-top: 110px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 15px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    nav ul li a {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 35px 15px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .seccion h2 {
+        font-size: 22px;
+    }
+
+    .tarjetas, 
+    .materias {
+        grid-template-columns: 1fr;
+    }
+
+    .requisitos li {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    .formulario {
+        padding: 25px 15px;
+        margin: 20px 10px;
+    }
+
+    .formulario input, 
+    .formulario textarea {
+        font-size: 14px;
+    }
+}
+
+/* Teléfonos muy pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 130px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+        padding: 5px 6px;
+        gap: 4px;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .requisitos li {
+        gap: 8px;
+    }
+
+    .requisitos li i {
+        font-size: 16px;
+    }
 }
