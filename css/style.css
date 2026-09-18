@@ -1,7 +1,264 @@
 /* ==========================================
    AJUSTES BASE PARA FLUIDIDEZ
    ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    padding-top: 60px;
+}
+
+header {
+    background-color: #006699;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo h1 {
+    font-size: 22px;
+}
+
+.logo span {
+    color: #ff3333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    background-color: #004466;
+    color: #ffcc00;
+}
+
+
+nav a .fa-house {
+    color: #ffcc00;
+}
+
+nav a .fa-school {
+    color: #ff3333;
+}
+
+nav a .fa-images {
+    color: #ffcc00;
+}
+
+nav a .fa-phone {
+    color: #ff3333;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 20px 20px 20px;
+    background-color: #e0f2fe;
+    border-bottom: 3px solid #006699;
+}
+
+.hero h2 {
+    color: #006699;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.hero p {
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.galeria {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.contenedor-diapositivas {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+    min-height: 540px; 
+}
+
+.diapositiva {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease-in-out;
+}
+
+.diapositiva.activa {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.diapositiva.desplazar-izquierda {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.diapositiva.desplazar-derecha {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.diapositiva.preparar-izquierda {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.diapositiva.preparar-derecha {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.diapositiva img {
+    width: 100%;
+    max-width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.diapositiva p {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #006699;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    font-size: 28px;
+    width: 45px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-carrusel:first-child {
+    left: 15px;
+}
+
+.btn-carrusel:last-child {
+    right: 15px;
+}
+
+.btn-carrusel:hover {
+    background-color: rgba(0, 102, 153, 0.85);
+}
+
+.aprenderas {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    font-size: 18px;
+}
+
+.info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 650px;
+    width: 100%;
+    border-left: 5px solid #006699;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.info h3 {
+    margin-bottom: 15px;
+    color: #006699;
+    font-size: 22px;
+}
+
+.info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+.info li i {
+    color: #006699;
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+}
 /* Asegurar que las imágenes nunca desborden su contenedor */
 img {
     max-width: 100%;
